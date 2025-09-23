@@ -12,7 +12,7 @@ services:
       POSTGRES_USER: username
       POSTGRES_PASSWORD: password
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U username"]
+      test: ["CMD-SHELL", "pg_isready -d cinebook_db -U username"]
       interval: 5s
       timeout: 5s
       retries: 5
