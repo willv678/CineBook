@@ -1,8 +1,10 @@
-# Use an official Python runtime as a parent image
-FROM python:3.14.0rc3-alpine3.22
+FROM python:3.13-alpine
 
 # Set the working directory in the container
 WORKDIR /app
+
+# Install build dependencies for psycopg2-binary
+RUN apk add --no-cache postgresql-dev build-base
 
 # Install dependencies
 COPY requirements.txt .
